@@ -1,0 +1,50 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-22 15:10:38
+ * @LastEditTime: 2020-07-28 20:40:17
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \暑期前端培训\5. Javascript   核心DOM BOM操作\js核心DOM BOM操作 05\10-scroll系列.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 10px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容
+        我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容
+
+    </div>
+    <script>
+        // scroll 系列
+        var div = document.querySelector('div');
+        console.log(div.scrollHeight);
+        console.log(div.clientHeight);
+        console.log(div.offsetWidth);
+        // scroll滚动事件当我们滚动条发生变化会触发的事件
+        div.addEventListener('scroll', function() {
+            console.log(div.scrollTop);
+            console.log(div.scrollHeight);
+
+        }) 
+    </script>
+</body>
+
+</html>

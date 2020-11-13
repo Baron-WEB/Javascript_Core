@@ -1,0 +1,50 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-22 15:10:16
+ * @LastEditTime: 2020-07-27 23:25:41
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \暑期前端培训\5. Javascript   核心DOM BOM操作\js核心DOM BOM操作 03\18-鼠标事件对象.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 鼠标事件对象 MouseEvent
+        document.addEventListener('click', function(e) {
+            // 1. client 鼠标在可视区的x和y坐标
+            console.log('e.clientX'+e.clientX);
+            console.log('e.clientY'+e.clientY);
+            console.log('---------------------');
+
+            // 2. page 鼠标在页面文档的x和y坐标
+            console.log('e.pageX'+e.pageX);
+            console.log('e.pageY'+e.pageY);
+            console.log('---------------------');
+
+            // 3. screen 鼠标在电脑屏幕的x和y坐标
+            console.log('e.screenX'+e.screenX);
+            console.log('e.screenY'+e.screenY);
+
+        })
+
+        document.addEventListener('keydown',function(e) {
+            console.log(e);
+        })
+    </script>
+</body>
+
+</html>

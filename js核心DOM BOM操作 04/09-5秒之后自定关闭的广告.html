@@ -1,0 +1,29 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-22 15:10:26
+ * @LastEditTime: 2020-07-28 15:02:23
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \暑期前端培训\5. Javascript   核心DOM BOM操作\js核心DOM BOM操作 04\09-5秒之后自定关闭的广告.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images/ad.jpg" alt="" class="ad">
+    <script>
+        var ad = document.querySelector('.ad');
+        setTimeout(function() {
+            ad.style.display = 'none';
+        }, 5000);
+    </script>
+</body>
+
+</html>

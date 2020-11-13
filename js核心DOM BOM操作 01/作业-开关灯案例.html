@@ -1,0 +1,164 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-22 15:09:45
+ * @LastEditTime: 2020-07-23 13:47:47
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \暑期前端培训\5. Javascript   核心DOM BOM操作\js核心DOM BOM操作 01\作业-开关灯案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #username {
+        outline: pink;
+        padding-left: 10px;
+      }
+
+      nav {
+        width: 500px;
+        height: 100px;
+        margin: 0 auto;
+      }
+
+      nav ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      nav ul li {
+        position: relative;
+        float: left;
+        height: 100%;
+      }
+
+      ul li a {
+        display: block;
+        height: 100%;
+        padding: 30px;
+        background-color: #eee;
+        text-decoration: none;
+        color: #000;
+      }
+
+      ul li a:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: orange;
+      }
+
+      ul li:hover #list {
+        display: block;
+      }
+
+      #list {
+        box-sizing: border-box;
+        background-color: #fff;
+        border-left: 1px solid orange;
+        border-right: 1px solid orange;
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 108%;
+        list-style: none;
+        top: 100%;
+        left: 0;
+        box-shadow: 4px 2px 7px rgba(0, 0, 0, 0.4);
+      }
+
+      #list li {
+        float: none;
+        height: auto;
+        text-align: center;
+        border-bottom: 1px solid orange;
+      }
+
+      #list li a {
+          padding: 0;
+          background-color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="btn">开关灯</button>
+    <input type="text" id="username" placeholder="邮箱/ID/手机号" />
+    <nav>
+      <ul>
+        <li>
+          <a href="#">登录</a>
+          <ul id="list">
+            <li>
+              <a href="">私信</a>
+            </li>
+            <li>
+              <a href="">评论</a>
+            </li>
+            <li>
+              <a href="">@我</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul id="list">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">博客</a>
+            <ul id="list">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">邮箱</a>
+            <ul id="list">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </li>
+      </ul>
+    </nav>
+    <script>
+      var btn = document.getElementById("btn");
+      var flag = 0;
+      btn.onclick = function () {
+        if (flag == 0) {
+          document.body.style.backgroundColor = "black";
+          flag = 1;
+        } else {
+          document.body.style.backgroundColor = "#fff";
+          flag = 0;
+        }
+      };
+
+      let username = document.querySelector("#username");
+      username.onfocus = function () {
+        this.style.border = "1px solid pink";
+        this.placeholder = "";
+      };
+
+      username.onblur = function () {
+        this.style.border = "1px solid #eee";
+        this.placeholder = "邮箱/ID/手机号";
+        this.value = "";
+      };
+    </script>
+  </body>
+</html>

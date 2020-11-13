@@ -1,0 +1,58 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-22 15:10:16
+ * @LastEditTime: 2020-07-27 23:02:20
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \暑期前端培训\5. Javascript   核心DOM BOM操作\js核心DOM BOM操作 03\16-事件委托.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .big {
+            background-color: green;
+        }
+
+        p {
+            background-color:skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>知否知否，点我应有弹框在手！</li>
+        <li>知否知否，点我应有弹框在手！</li>
+        <li>知否知否，点我应有弹框在手！</li>
+        <li>知否知否，点我应有弹框在手！</li>
+        <li>知否知否，点我应有弹框在手！</li>
+    </ul>
+    <div class="big">
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+    </div>
+    <script>
+        // 事件委托的核心原理：给父节点添加侦听器， 利用事件冒泡影响每一个子节点
+        var ul = document.querySelector('ul');
+        let big = document.querySelector('.big')
+        ul.addEventListener('click', function(e) {
+            // alert('知否知否，点我应有弹框在手！');
+            // e.target 这个可以得到我们点击的对象
+            //console.log(e.target);
+            for (let i = 0; i < this.children.length; i++) {
+                this.children[i].style.backgroundColor = ''
+            }
+            e.target.style.backgroundColor = 'pink';
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-22 15:10:16
+ * @LastEditTime: 2020-07-27 23:18:51
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \暑期前端培训\5. Javascript   核心DOM BOM操作\js核心DOM BOM操作 03\17-常见鼠标事件.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    我是一段不愿意分享的文字
+    <script>
+        // 1. contextmenu 我们可以禁用右键菜单
+        document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            })
+        
+        document.oncontextmenu = function(e) {
+            e.preventDefault()
+        }
+            // 2. 禁止选中文字 selectstart
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            alert(11)
+        })
+    </script>
+</body>
+
+</html>
